@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Auto-Responder Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="chat-container">
+
+    <div class="doctor-icon">🩺</div>
+
+    <div class="badge-row">
+        <span>🚑 Emergency Help</span>
+        <span>🤖 Smart AI Bot</span>
+        <span>⚙️ Moore + Mealy</span>
+    </div>
+
+    <h1>Healthcare Auto-Responder Bot</h1>
+
+    <p class="subtitle">Using Moore & Mealy Machines</p>
+
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Toggle Dark Mode</button>
+
+    <div class="theory-box">
+        <p><b>Mealy Machine:</b> Output depends on current state + user input.</p>
+        <p><b>Moore Machine:</b> Output depends only on current state.</p>
+    </div>
+
+    <div class="state-box">
+        <h3>📍 Current State:</h3>
+        <p id="stateDisplay">START</p>
+    </div>
+
+    <div class="quick-buttons">
+        <button onclick="quickSymptom('fever')">🌡 Fever</button>
+        <button onclick="quickSymptom('cough')">🤧 Cough</button>
+        <button onclick="quickSymptom('headache')">🤕 Headache</button>
+        <button onclick="quickSymptom('stress')">🧘 Stress</button>
+        <button onclick="quickSymptom('chest pain')">🚨 Chest Pain</button>
+    </div>
+
+    <div id="chatBox" class="chat-box">
+        <div class="bot-message">
+            👋 Hello! Tell me your symptoms.
+        </div>
+    </div>
+
+    <div class="input-area">
+        <input type="text" id="userInput" placeholder="Type your symptoms here...">
+
+        <button onclick="startVoice()">🎤</button>
+
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="history-box">
+        <h3>📜 Symptom History</h3>
+        <ul id="historyList"></ul>
+    </div>
+
+    <div class="diagram-box">
+        <h3>🔄 State Transition Diagram</h3>
+
+        <div class="diagram">
+            START → FEVER → FEVER_COUGH → EMERGENCY
+        </div>
+    </div>
+
+    <button class="reset-btn" onclick="resetBot()">Reset Bot</button>
+
+</div>
+
+<div id="popup" class="popup">
+    🚨 Emergency Detected! Call Ambulance: 102 / 108
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
